@@ -1,7 +1,7 @@
 package com.example.library;
 
 public class Book {
-    private String isbn;
+    private Long isbn;
     private String name;
     private String edition;
     private String author;
@@ -13,7 +13,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(String isbn, String name, String edition, String author, int year, String category, String summary) {
+    public Book(Long isbn, String name, String edition, String author, int year, String category, String summary) {
         this.isbn = isbn;
         this.name = name;
         this.edition = edition;
@@ -23,11 +23,11 @@ public class Book {
         this.summary = summary;
     }
 
-    public String getIsbn() {
+    public Long getIsbn() {
         return this.isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(Long isbn) {
         this.isbn = isbn;
     }
 
@@ -79,7 +79,7 @@ public class Book {
         this.summary = summary;
     }
 
-    public Book isbn(String isbn) {
+    public Book isbn(Long isbn) {
         setIsbn(isbn);
         return this;
     }

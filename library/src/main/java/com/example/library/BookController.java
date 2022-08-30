@@ -11,7 +11,25 @@ public class BookController {
     public String welcome(){
         return "index";
     }
+
+    @GetMapping(value="/about")
+    public String about(){
+        return "about";
     }
+    @GetMapping(value="/contact")
+    public String contact(){
+        return "contact";
+    }
+    @GetMapping(value="/login")
+    public String login(){
+        return "login";
+    }
+
+    }
+
+    
+
+
     
 
     
