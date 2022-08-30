@@ -1,6 +1,32 @@
 package com.example.library;
 
+import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="library")
 public class Book {
+    @Id
+
+    @SequenceGenerator(
+        name="book_sequence",
+        sequenceName = "book_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long Id;
+
+    public Long getId() {
+        return this.Id;
+    }
+
+    public void setId(Long Id) {
+        this.Id = Id;
+    }
+    
     private Long isbn;
     private String name;
     private String edition;
@@ -119,7 +145,8 @@ public class Book {
     @Override
     public String toString() {
         return "{" +
-            " isbn='" + getIsbn() + "'" +
+            " Id='" + getId() + "'" +
+            ", isbn='" + getIsbn() + "'" +
             ", name='" + getName() + "'" +
             ", edition='" + getEdition() + "'" +
             ", author='" + getAuthor() + "'" +
@@ -128,6 +155,8 @@ public class Book {
             ", summary='" + getSummary() + "'" +
             "}";
     }
+
+    
     
 
 }
