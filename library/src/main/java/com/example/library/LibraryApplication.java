@@ -11,12 +11,13 @@ public class LibraryApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryApplication.class, args);
 	}
+	/** 
 	@Bean
 	ApplicationRunner init(BookRepository bookRepository){
 		return args -> {
 			BookService bookService = new BookService(bookRepository);
 			bookService.addNewBook();
-		};
+		};*/
 	}
 
-}
+

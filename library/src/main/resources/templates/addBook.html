@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+</head>
+<body>
+
+    <div th:insert="fragments/components :: menu"></div>
+    <h1>Add Book</h1>
+    <h2>Please enter the following information of the book you would like to add.</h2>
+    <form action="#" th:action="@{/addBook}" th:object="${book}" method="post">
+    	<p>Name: <input type="text" th:field="*{name}" /></p>
+        <p>ISBN: <input type="text" th:field="*{isbn}" /></p>
+        <p>Edition: <input type="text" th:field="*{edition}" /></p>
+        <p>Author: <input type="text" th:field="*{author}" /></p>
+        <p>Year: <input type="text" th:field="*{year}" /></p>
+        <p>Category: <input type="text" th:field="*{category}" /></p>
+        <p>Summary: <input type="text" th:field="*{summary}" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+    
+</body>
+</html>

@@ -14,7 +14,8 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-        public void addNewBook() {
+        public void addNewBook(Book book) {
+            /** 
             Book book=new Book();
             book.setAuthor("author");
             book.category("category");
@@ -22,7 +23,7 @@ public class BookService {
             book.setName("name");
             book.setIsbn(12334L);
             book.setYear(1995);
-            book.setSummary("summary");
+            book.setSummary("summary");*/
             bookRepository.save(book);
         }
 
