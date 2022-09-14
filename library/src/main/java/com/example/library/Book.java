@@ -5,12 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name="library")
 public class Book {
     @Id
-
     @SequenceGenerator(
         name="book_sequence",
         sequenceName = "book_sequence",
@@ -23,16 +25,37 @@ public class Book {
         return this.Id;
     }
 
+
     public void setId(Long Id) {
         this.Id = Id;
     }
-    
+
+    @NotNull
+    @Column(name = "ISBN", unique = true)
     private Long isbn;
+    
+    @NotNull
+    @Column(name = "Book_name")
     private String name;
+
+    @NotNull
+    @Column(name = "Edition")
     private String edition;
+
+    @NotNull
+    @Column(name = "Author")
     private String author;
+
+    @NotNull
+    @Column(name = "Year")
     private int year;
+
+    @NotNull
+    @Column(name = "Category")
     private String category;
+
+    @NotNull
+    @Column(name = "Summary")
     private String summary;
     
 
@@ -142,11 +165,12 @@ public class Book {
 
     
 
+  
+
     @Override
     public String toString() {
         return "{" +
-            " Id='" + getId() + "'" +
-            ", isbn='" + getIsbn() + "'" +
+            " isbn='" + getIsbn() + "'" +
             ", name='" + getName() + "'" +
             ", edition='" + getEdition() + "'" +
             ", author='" + getAuthor() + "'" +

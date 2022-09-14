@@ -43,19 +43,23 @@ public class BookController {
     public String sumbitBook(@ModelAttribute Book book, Model model){
         model.addAttribute("book", book);
         System.out.println(book.toString());
-        Book newBook= new Book(book.getIsbn(), book.getName(), book.getEdition(), book.getAuthor(), book.getYear(), book.getCategory(), book.getSummary());
         
-		bookRepository.save(newBook);
+		bookRepository.save(book);
 
         
         return "result";
 
-
     }
 
-    
+    @GetMapping(value = "/bookList")
+    public String bookList(Model model){
+        model.addAttribute("books", bookRepository.findAll());
+        return "bookList";
+
+
 
     }
+}
 
     
 
